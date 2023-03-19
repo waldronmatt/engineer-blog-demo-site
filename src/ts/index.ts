@@ -19,6 +19,9 @@ document
     document.createTextNode(new Date().getFullYear() as unknown as string)
   );
 
+// @PERFORMANCE-COMMENT
+// for anything (component) not above-the-fold,
+// lazy load them when in viewport
 const imported: { [key: string]: boolean } = {};
 const observer = new IntersectionObserver((entries, observerReference) => {
   entries.forEach(async entry => {

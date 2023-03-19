@@ -8,6 +8,8 @@ const commonConfig = isProduction => {
   parts(isProduction);
 
   return merge([
+    // @PERFORMANCE-COMMENT
+    // code split .js files so they can be processed in parellel
     {
       entry: {
         main: [`${paths.src}/ts/index.ts`],

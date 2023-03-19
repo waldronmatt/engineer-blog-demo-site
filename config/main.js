@@ -27,6 +27,13 @@ export const expressApp = () => {
     })
   );
 
+  // @PERFORMANCE-COMMENT
+  // compress assets for better perf
+  //
+  // better performance to serve assets statically from webpack
+  // than to have express do this 'on-the-fly' (dynamically)
+  //
+  // brotli chosen for better speed and good compression
   app.use(
     '/',
     expressStaticGzip(path.join(__dirname), {

@@ -9,6 +9,8 @@ const commonConfig = require('./webpack.common');
 const paths = require('./paths');
 
 const productionConfig = {
+  // @PERFORMANCE-COMMENT
+  // minify js and css for smaller bundle sizes across the network
   plugins: [
     new ESBuildMinifyPlugin({
       target: 'es2015',
@@ -22,6 +24,9 @@ const productionConfig = {
           plugins: [['jpegtran', { progressive: true }]],
         },
       },
+      // @PERFORMANCE-COMMENT
+      // convert images to use webp format for reduced
+      // payload across the network
       generator: [
         {
           preset: 'webp',
@@ -32,6 +37,8 @@ const productionConfig = {
         },
       ],
     }),
+    // @PERFORMANCE-COMMENT
+    // compress minified assets for even smaller payloads
     new CompressionPlugin({
       algorithm: 'brotliCompress',
       test: /\.(js|css|html)$/,
@@ -47,6 +54,11 @@ const productionConfig = {
   ],
   optimization: {
     splitChunks: {
+      // @PERFORMANCE-COMMENT
+      // this isn't in-use for this example
+      //
+      // if we were to use a framework or 3rd party libs like react
+      // we can code split them for better performance
       cacheGroups: {
         vendor: {
           name: 'vendors',
@@ -54,6 +66,8 @@ const productionConfig = {
           test: /node_modules/,
           priority: 20,
         },
+        // @PERFORMANCE-COMMENT
+        // break out shared code into a single chunk for reduced payload
         common: {
           name: 'commons',
           minChunks: 2,

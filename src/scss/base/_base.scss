@@ -1,4 +1,6 @@
 body {
+  // @PERFORMANCE-COMMENT
+  // default to system fonts while we 'swap' to our desired tajawal font
   font-family: Tajawal, Arial, Helvetica, sans-serif;
   margin: 1rem;
 }

@@ -4,9 +4,9 @@ const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-p
 const paths = require('./paths');
 
 const siteData = {
-  title: 'Webpack Boilerplate',
-  description: 'Comprehensive Webpack 5 Boilerplate',
-  keywords: 'webpack, boilerplate, template, config',
+  title: 'Engineer Blog Demo Site',
+  description: 'Engineer Blog Demo Site',
+  keywords: 'webpack, boilerplate, template, performance',
 };
 
 // optionally pass in `isProduction` to apply environment-specific logic
@@ -26,6 +26,8 @@ const parts = (/* isProduction */) => {
         base: paths.publicPath,
       }),
       new HtmlWebpackInjectPreload({
+        // @PERFORMANCE-COMMENT
+        // preload css to optimize delivery and prevent render-blocking
         files: [
           {
             match: /.[\da-z-]*.css$/,

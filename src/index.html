@@ -3,10 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <!-- <link rel="preload" as="image" href="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny"> -->
+    <!--
+      @PERFORMANCE-COMMENT
+      preemptively initiate a connection to third-party domains
+    -->
+    <link rel="preconnect" href="https://dummyimage.com" />
+    <link rel="preconnect" href="https://picsum.photos" />
+    <!--
+      @PERFORMANCE-COMMENT
+      pre-connect and boost priority to get an above-the-fold image with greatest LCP
+    -->
+    <link rel="preload" fetchpriority="high" as="image" href="https://dummyimage.com/150x100">
+    <link rel="preload" fetchpriority="high" as="image" href="https://picsum.photos/id/15/150/100">
   <body>
     <header>
-      <!-- https://web.dev/optimize-cls/#modern-best-practice -->
       <h1>The Engineer's Blog</h1>
       <nav>
         <ul class="nav">
@@ -19,7 +29,16 @@
     <main>
       <custom-modal>
         <span slot="heading">Hello world</span>
-        <blog-article>
+        <!--
+          @PERFORMANCE-COMMENT
+          images in modal can be lazy-loaded
+        -->
+        <blog-article loading="lazy">
+          <!--
+            @PERFORMANCE-COMMENT
+            slot in placeholder images to reduce fouc while browser
+            loads the component and fetches the image
+          -->
           <picture slot="image">
             <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
             <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
@@ -31,7 +50,7 @@
         </blog-article>
       </custom-modal>
 
-      <blog-article post="2" img="15" fetchpriority="high">
+      <blog-article post="2" img="15">
         <picture slot="image">
           <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
           <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
@@ -41,7 +60,7 @@
         <h2 slot="header">Loading header...</h2>
         <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </blog-article>
-      <blog-article post="5" img="16" fetchpriority="high">
+      <blog-article post="5" img="16">
         <picture slot="image">
           <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
           <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
@@ -51,7 +70,7 @@
         <h2 slot="header">Loading header...</h2>
         <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </blog-article>
-      <blog-article post="7" img="17">
+      <blog-article post="7" img="17" loading="lazy">
         <picture slot="image">
           <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
           <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
@@ -61,6 +80,10 @@
         <h2 slot="header">Loading header...</h2>
         <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </blog-article>
+      <!--
+        @PERFORMANCE-COMMENT
+        video component is not critical on page load and can be lazy-loaded
+      -->
       <video-article class="dynamic-element">
         <picture slot="image">
           <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">

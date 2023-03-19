@@ -84,6 +84,11 @@ class VideoArticle extends HTMLElement {
           width: fit-content;
         }
 
+        // @PERFORMANCE-COMMENT
+        // increase perf by loading a video image placeholder
+        //
+        // when user clicks on image (play button),
+        // the video will autoplay
         .play::before {
           content: '';
           width: auto;
@@ -129,17 +134,25 @@ class VideoArticle extends HTMLElement {
         </section>
       </article>
     `;
+    // @PERFORMANCE-COMMENT
+    // swap out placeholder images for actual ones below
     this.shadowRoot!.querySelector('slot[name="image"]')?.setAttribute(
       'hidden',
       ''
     );
     const image = this.shadowRoot?.querySelector('div');
+    // @PERFORMANCE-COMMENT
+    // use 'source' element to optimize image sizes on different viewports
+    //
+    // use srcset to load optimized webp images if browsers support
+    //
+    // define width and height to reduce fouc while browser is loading images
     image!.innerHTML = `
       <picture>
         <source media="(min-width: 992px)" height="300" width="450" srcset="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" type="image/jpg">
         <source media="(min-width: 576px)" height="200" width="300" srcset="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" type="image/jpg">
         <source media="(min-width: 0px)" height="100" width="150" srcset="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" type="image/jpg">
-        <img fetchpriority="low" src="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" alt="Big Buck Bunny Video">
+        <img loading="lazy" src="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" alt="Big Buck Bunny Video">
       </picture>
       <div class='play'></div>
     `;

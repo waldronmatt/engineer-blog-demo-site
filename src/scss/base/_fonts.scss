@@ -1,4 +1,5 @@
 @font-face {
+  // @PERFORMANCE-COMMENT
   // guarantee text to be rendered with our font while not blocking the text
   font-display: swap;
 
@@ -10,7 +11,10 @@
   font-style: normal;
   font-weight: 400;
   src:
+    // @PERFORMANCE-COMMENT
     // local() function allows users to use their local copy of the font if present
+    //
+    // allows users to pull from their cache if they have it for better perf
     local('Tajawal'), local('Tajawal-Regular'),
     // Super Modern Browsers
     url('../fonts/tajawal-v3-latin-regular.woff2') format('woff2'),

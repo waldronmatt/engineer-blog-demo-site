@@ -4,7 +4,8 @@ video-article {
   margin-top: 1em;
 }
 
-// https://web.dev/custom-elements-v1/#pre-styling-unregistered-elements
+// @PERFORMANCE-COMMENT
+// prestyle undefined components to reduce fouc
 blog-article:not(:defined),
 video-article:not(:defined) {
   display: block;
