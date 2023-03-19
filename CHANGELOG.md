@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/waldronmatt/engineer-blog-demo-site/compare/v1.0.2...v1.0.3) (2023-03-19)
+
+
+### Bug Fixes
+
+* **global:** remove secretlint, add missing perf comment ([297efde](https://github.com/waldronmatt/engineer-blog-demo-site/commit/297efde37b7c054b3a288635b60686fa22ab3307))
+
 ## [1.0.2](https://github.com/waldronmatt/engineer-blog-demo-site/compare/v1.0.1...v1.0.2) (2023-03-19)
 
 
