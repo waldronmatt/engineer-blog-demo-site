@@ -1,6 +1,6 @@
 # Engineer Blog Demo Site
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/034b2c05-6283-4434-a7dd-ad14568aff76/deploy-status)](https://app.netlify.com/sites/https://waldronmatt-engineer-blog-demo-site.netlify.app/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/034b2c05-6283-4434-a7dd-ad14568aff76/deploy-status)](https://app.netlify.com/sites/waldronmatt-engineer-blog-demo-site/deploys)
 
 A performant demo site using `Webpack` and `Express.js`.
 
