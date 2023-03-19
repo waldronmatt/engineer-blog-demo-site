@@ -1,0 +1,14 @@
+blog-article,
+video-article {
+  display: block;
+  margin-top: 1em;
+}
+
+// https://web.dev/custom-elements-v1/#pre-styling-unregistered-elements
+blog-article:not(:defined),
+video-article:not(:defined) {
+  display: block;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}

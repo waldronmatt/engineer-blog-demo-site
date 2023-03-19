@@ -1,0 +1,29 @@
+body {
+  font-family: Tajawal, Arial, Helvetica, sans-serif;
+  margin: 1rem;
+}
+
+main {
+  :last-child {
+    margin-bottom: 1rem;
+  }
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  font-size: larger;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+a,
+button {
+  padding: 0.5rem;
+
+  &:focus {
+    border: 2px solid #00f;
+  }
+}

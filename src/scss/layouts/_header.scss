@@ -1,0 +1,28 @@
+header {
+  align-items: center;
+  border-bottom: 2px solid #d3d3d3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 1rem;
+
+  h1 {
+    flex-grow: 1;
+  }
+}
+
+nav {
+  ul {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+  }
+}
+
+/* stylelint-disable selector-max-id */
+#launch-modal {
+  cursor: pointer;
+  font-weight: bold;
+  position: static;
+}

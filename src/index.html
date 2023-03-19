@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- <link rel="preload" as="image" href="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny"> -->
+  <body>
+    <header>
+      <!-- https://web.dev/optimize-cls/#modern-best-practice -->
+      <h1>The Engineer's Blog</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="/">Home</a></li>
+          <li><button id="launch-modal">Subscribe</button></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <custom-modal>
+        <span slot="heading">Hello world</span>
+        <blog-article>
+          <picture slot="image">
+            <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
+            <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
+            <source media="(min-width: 0px)" height="100" width="150" srcset="https://dummyimage.com/150x100" type="image/jpg">
+            <img src="https://dummyimage.com/150x100" alt="Nature picture">
+          </picture>
+          <h2 slot="header">Loading header...</h2>
+          <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </blog-article>
+      </custom-modal>
+
+      <blog-article post="2" img="15" fetchpriority="high">
+        <picture slot="image">
+          <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
+          <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
+          <source media="(min-width: 0px)" height="100" width="150" srcset="https://dummyimage.com/150x100" type="image/jpg">
+          <img src="https://dummyimage.com/150x100" alt="Nature picture">
+        </picture>
+        <h2 slot="header">Loading header...</h2>
+        <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </blog-article>
+      <blog-article post="5" img="16" fetchpriority="high">
+        <picture slot="image">
+          <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
+          <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
+          <source media="(min-width: 0px)" height="100" width="150" srcset="https://dummyimage.com/150x100" type="image/jpg">
+          <img src="https://dummyimage.com/150x100" alt="Nature picture">
+        </picture>
+        <h2 slot="header">Loading header...</h2>
+        <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </blog-article>
+      <blog-article post="7" img="17">
+        <picture slot="image">
+          <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
+          <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
+          <source media="(min-width: 0px)" height="100" width="150" srcset="https://dummyimage.com/150x100" type="image/jpg">
+          <img src="https://dummyimage.com/150x100" alt="Nature picture">
+        </picture>
+        <h2 slot="header">Loading header...</h2>
+        <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </blog-article>
+      <video-article class="dynamic-element">
+        <picture slot="image">
+          <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
+          <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
+          <source media="(min-width: 0px)" height="100" width="150" srcset="https://dummyimage.com/150x100" type="image/jpg">
+          <img src="https://dummyimage.com/150x100" alt="Big Buck Bunny Video">
+        </picture>
+        <h2 slot="header">Loading header...</h2>
+        <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </video-article>
+    </main>
+    <footer>
+      <!-- https://web.dev/optimize-cls/#modern-best-practice -->
+      <small>© <span id="footer-copyright"></span> The Engineer's Blog</small>
+      <nav>
+        <ul class="nav">
+          <li><a href="/">Sitemap</a></li>
+          <li><a href="/">Legal</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
