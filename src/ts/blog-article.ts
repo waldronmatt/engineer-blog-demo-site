@@ -48,14 +48,14 @@ class BlogArticle extends HTMLElement {
     body!.textContent = post.body;
   }
 
+  // @PERFORMANCE-COMMENT
+  // we can use grid instead of media queries and reduce fouc on devices
   render() {
     this.shadowRoot!.innerHTML = `
       <style>
         article {
           margin-top: 1rem;
           display: grid;
-          // @PERFORMANCE-COMMENT
-          // we can use grid instead of media queries and reduce fouc on devices
           grid-template-columns: repeat(auto-fit, minmax(300px, auto));
           align-items: start;
           row-gap: 1rem;

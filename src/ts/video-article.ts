@@ -62,6 +62,11 @@ class VideoArticle extends HTMLElement {
     window.removeEventListener('resize', () => this.renderCorrectVideoSize());
   }
 
+  // @PERFORMANCE-COMMENT
+  // increase perf by loading a video image placeholder
+  //
+  // when user clicks on image (play button),
+  // the video will autoplay
   render() {
     this.shadowRoot!.innerHTML = `
       <style>
@@ -84,11 +89,6 @@ class VideoArticle extends HTMLElement {
           width: fit-content;
         }
 
-        // @PERFORMANCE-COMMENT
-        // increase perf by loading a video image placeholder
-        //
-        // when user clicks on image (play button),
-        // the video will autoplay
         .play::before {
           content: '';
           width: auto;
