@@ -3,6 +3,8 @@
 /* global document */
 // eslint-disable-next-line import/no-unresolved
 import '@/scss/index.scss';
+// @PERFORMANCE-COMMENT
+// tells webpack to map generated webp to jpg
 import webpackLogo from '@/images/icon-square-small.jpg?as=webp';
 
 const logo = document.createElement('img');
