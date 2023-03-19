@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/waldronmatt/engineer-blog-demo-site/compare/v1.0.1...v1.0.2) (2023-03-19)
+
+
+### Bug Fixes
+
+* **src:** move per comments inlined in css to above render ([cf4d697](https://github.com/waldronmatt/engineer-blog-demo-site/commit/cf4d697f0ba9238c5a5bad689b1dd0fee4ecdc01))
+
 ## [1.0.1](https://github.com/waldronmatt/engineer-blog-demo-site/compare/v1.0.0...v1.0.1) (2023-03-19)
 
 
