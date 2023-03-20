@@ -12,14 +12,6 @@ class BlogArticle extends HTMLElement {
     this.render();
   }
 
-  get loading() {
-    return this.getAttribute('loading') || 'eager';
-  }
-
-  set loading(value) {
-    this.setAttribute('loading', value);
-  }
-
   get post() {
     return this.getAttribute('post') || '20';
   }
@@ -98,7 +90,7 @@ class BlogArticle extends HTMLElement {
         <source media="(min-width: 576px)" height="200" width="300" srcset="https://picsum.photos/id/${this.img}/300/200" type="image/jpg">
         <source media="(min-width: 0px)" height="100" width="150" srcset="https://picsum.photos/id/${this.img}/150/100.webp" type="image/webp">
         <source media="(min-width: 0px)" height="100" width="150" srcset="https://picsum.photos/id/${this.img}/150/100" type="image/jpg">
-        <img loading="${this.loading}" src="https://picsum.photos/id/${this.img}/150/100" alt="Nature picture">
+        <img src="https://picsum.photos/id/${this.img}/150/100" alt="Nature picture">
       </picture>
     `;
   }

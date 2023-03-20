@@ -63,10 +63,9 @@ class VideoArticle extends HTMLElement {
   }
 
   // @PERFORMANCE-COMMENT
-  // increase perf by loading a video image placeholder
-  //
-  // when user clicks on image (play button),
-  // the video will autoplay
+  // when the video comes into view and is lazy loaded and
+  // while the user clicks on the video image placeholder, this will give
+  // enough time for the video to download in the background
   render() {
     this.shadowRoot!.innerHTML = `
       <style>
@@ -152,7 +151,7 @@ class VideoArticle extends HTMLElement {
         <source media="(min-width: 992px)" height="300" width="450" srcset="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" type="image/jpg">
         <source media="(min-width: 576px)" height="200" width="300" srcset="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" type="image/jpg">
         <source media="(min-width: 0px)" height="100" width="150" srcset="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" type="image/jpg">
-        <img loading="lazy" src="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" alt="Big Buck Bunny Video">
+        <img src="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" alt="Big Buck Bunny Video">
       </picture>
       <div class='play'></div>
     `;

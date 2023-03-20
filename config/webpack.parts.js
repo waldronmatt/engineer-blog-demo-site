@@ -1,6 +1,4 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-// eslint-disable-next-line max-len
-const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 const paths = require('./paths');
 
 const siteData = {
@@ -24,16 +22,6 @@ const parts = (/* isProduction */) => {
           'Content-Security-Policy': "default-src 'self'; script-src *",
         },
         base: paths.publicPath,
-      }),
-      new HtmlWebpackInjectPreload({
-        // @PERFORMANCE-COMMENT
-        // preload css to optimize delivery and prevent render-blocking
-        files: [
-          {
-            match: /.[\da-z-]*.css$/,
-            attributes: { as: 'style' },
-          },
-        ],
       }),
       new HtmlWebPackPlugin({
         filename: '404.html',

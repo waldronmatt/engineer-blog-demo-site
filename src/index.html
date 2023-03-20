@@ -45,6 +45,10 @@
             <source media="(min-width: 0px)" height="100" width="150" srcset="https://dummyimage.com/150x100" type="image/jpg">
             <img src="https://dummyimage.com/150x100" alt="Nature picture">
           </picture>
+          <!--
+            @PERFORMANCE-COMMENT
+            slot in loading text to allow time for the article fetch request to reduce fouc
+          -->
           <h2 slot="header">Loading header...</h2>
           <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </blog-article>
@@ -70,7 +74,7 @@
         <h2 slot="header">Loading header...</h2>
         <p slot="content">Loading content...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </blog-article>
-      <blog-article post="7" img="17" loading="lazy">
+      <blog-article post="7" img="17">
         <picture slot="image">
           <source media="(min-width: 992px)" height="300" width="450" srcset="https://dummyimage.com/450x300" type="image/jpg">
           <source media="(min-width: 576px)" height="200" width="300" srcset="https://dummyimage.com/300x200" type="image/jpg">
@@ -96,7 +100,6 @@
       </video-article>
     </main>
     <footer>
-      <!-- https://web.dev/optimize-cls/#modern-best-practice -->
       <small>© <span id="footer-copyright"></span> The Engineer's Blog</small>
       <nav>
         <ul class="nav">
