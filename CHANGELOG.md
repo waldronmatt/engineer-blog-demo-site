@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/waldronmatt/engineer-blog-demo-site/compare/v1.0.3...v1.0.4) (2023-03-20)
+
+
+### Bug Fixes
+
+* **global:** preload css, fonts and reorganize scripts ([8f9ee46](https://github.com/waldronmatt/engineer-blog-demo-site/commit/8f9ee46580e0e9d2af8de6fc27c382e60dc032dd))
+
 ## [1.0.3](https://github.com/waldronmatt/engineer-blog-demo-site/compare/v1.0.2...v1.0.3) (2023-03-19)
 
 
